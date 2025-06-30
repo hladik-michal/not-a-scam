@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Neon Casino</title>
+  <style>
+    body {
+      background-color: navy;
+      color: cyan;
+      text-align: center;
+      font-family: 'Courier New', monospace;
+      padding-top: 50px;
+    }
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 10px cyan;
+      animation: glow 1s infinite alternate;
+    }
+    .lotto {
+      color: yellow;
+      font-weight: bold;
+      margin-top: 30px;
+      animation: blink 0.5s infinite;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px cyan; }
+      to { text-shadow: 0 0 20px white; }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+  </style>
+</head>
+<body>
+  <h1>💎 NEON CASINO 💎</h1>
+  <p>Toč ruletu a vyhraj 100 000 Kč</p>
+  <div class="lotto">🎉 PRÁVĚ VYHRÁL: Lucie K. – 1× OPPLE Watch</div>
+</body>
+</html>
