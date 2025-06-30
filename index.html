@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Gratulujeme! Vyhrál jste!</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, red, black);
+      color: yellow;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding: 50px;
+      animation: blinkBg 1s infinite;
+    }
+    h1 {
+      font-size: 3em;
+      animation: blinkText 0.7s infinite;
+      text-shadow: 2px 2px 5px white;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 1.5em;
+      background-color: gold;
+      border: 5px dashed red;
+      cursor: pointer;
+      animation: shake 0.5s infinite;
+    }
+    .ad-banner {
+      margin: 20px auto;
+      padding: 10px;
+      background: white;
+      color: black;
+      font-weight: bold;
+      width: 80%;
+      border: 2px solid lime;
+      animation: blinkAd 0.5s infinite;
+    }
+    .review {
+      font-size: 1em;
+      color: white;
+      margin-top: 20px;
+    }
+
+    @keyframes blinkBg {
+      0%, 100% { background-color: red; }
+      50% { background-color: black; }
+    }
+
+    @keyframes blinkText {
+      0%, 100% { color: yellow; }
+      50% { color: white; }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    @keyframes blinkAd {
+      0%, 100% { background-color: white; }
+      50% { background-color: yellow; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎰 VYHRAJTE 10 000 Kč!</h1>
+  <div class="ad-banner">🔥 REKLAMA: OPPLE iPhone X15 za 1 Kč!</div>
+  <div class="ad-banner">⚡ REKLAMA: Nový Sandsung Galaxy ULTRA MAXX 32!</div>
+
+  <p>Kliknutím níže se spustí všechna casina:</p>
+  <button onclick="openCasinos()">SPUSTIT CASINA</button>
+
+  <div class="review">
+    ✅ Jan z Brna právě vyhrál iPhone X15 Pro!<br>
+    ✅ Petra z Ostravy získala 10 000 Kč v Neonu!<br>
+    ✅ Pavel z Plzně obdržel Sandsung Fold 8!
+  </div>
+
+  <script>
+    function openCasinos() {
+      const win1 = window.open("casino1.html", "_blank");
+      const win2 = window.open("casino2.html", "_blank");
+      const win3 = window.open("casino3.html", "_blank");
+
+      setTimeout(() => {
+        [win1, win2, win3].forEach(win => {
+          if (win && !win.closed) win.close();
+        });
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
